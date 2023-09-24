@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCMB.WebApi", "TCMB.WebApi\TCMB.WebApi.csproj", "{CA54FE45-9E44-427E-B307-C9DBA85B8C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcmbUI", "TcmbUI\TcmbUI.csproj", "{861EAC1B-43B5-44DD-9B12-98EF2D44C5A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA54FE45-9E44-427E-B307-C9DBA85B8C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA54FE45-9E44-427E-B307-C9DBA85B8C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA54FE45-9E44-427E-B307-C9DBA85B8C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA54FE45-9E44-427E-B307-C9DBA85B8C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861EAC1B-43B5-44DD-9B12-98EF2D44C5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861EAC1B-43B5-44DD-9B12-98EF2D44C5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861EAC1B-43B5-44DD-9B12-98EF2D44C5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861EAC1B-43B5-44DD-9B12-98EF2D44C5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C9B0650-7987-4618-A157-812771A4D184}
+	EndGlobalSection
+EndGlobal
