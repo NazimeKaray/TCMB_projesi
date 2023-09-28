@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
+using TCMB.WebApi.Models;
 
 namespace TCMB.WebApi.Controllers
 {
@@ -37,25 +38,29 @@ namespace TCMB.WebApi.Controllers
             return Ok(doc.InnerXml);
 
         }
-        [HttpGet("getType")]
-        public IActionResult GetType(string currency, string year, string month, string day)
+        [HttpPost("getType")]
+        public IActionResult GetType(ExchangeModel model)
         {
-            string url = string.Format("https://www.tcmb.gov.tr/kurlar/{0}{1}/{2}{1}{0}.xml", year, month, day);
+            string url = string.Format("https://www.tcmb.gov.tr/kurlar/{0}{1}/{2}{1}{0}.xml", model.Year, model.Month, model.Day);
             XmlDocument doc = new XmlDocument();
             XmlTextReader rdr = new XmlTextReader(url);
             doc.Load(rdr);
             XmlNodeList code= doc.SelectNodes("/Tarih_Date/Currency/@Kod");
             XmlNodeList Buy = doc.SelectNodes("/Tarih_Date/Currency/ForexBuying");
             XmlNodeList Sell = doc.SelectNodes("/Tarih_Date/Currency/ForexSelling");
+            var ExchangeDTO=new ExchangeDTO();
             for (int i = 0; i<code.Count; i++){
 
-                if (currency.ToUpper() == code[i].InnerText)
+                if (model.Currency.ToUpper() == code[i].InnerText)
                 {
-                    return Ok("Tur: "+ code[i].InnerText + " Alis: " + Buy[i].InnerText + " Satis: " + Sell[i].InnerText);
+                    ExchangeDTO.Code = code[i].InnerText;
+                    ExchangeDTO.Buy = Buy[i].InnerText;
+                    ExchangeDTO.Sell=Sell[i].InnerText;
                 }
                 
             }
-            return Ok();
+
+            return Ok(ExchangeDTO);
         }
 
 
