@@ -28,7 +28,7 @@ namespace TCMB.WebApi.Controllers
             return Ok(xml.ToString());
         }
 
-        [HttpGet("getPast")]
+        [HttpGet("GetPast")]
         public IActionResult GetPast( string year, string month, string day)
         {
             string url = string.Format("https://www.tcmb.gov.tr/kurlar/{0}{1}/{2}{1}{0}.xml",year,month,day);
@@ -38,7 +38,7 @@ namespace TCMB.WebApi.Controllers
             return Ok(doc.InnerXml);
 
         }
-        [HttpPost("getType")]
+        [HttpPost("Exchange")]
         public IActionResult GetType(ExchangeModel model)
         {
             string url = string.Format("https://www.tcmb.gov.tr/kurlar/{0}{1}/{2}{1}{0}.xml", model.Year, model.Month, model.Day);
