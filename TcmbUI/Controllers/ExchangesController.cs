@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using TcmbUI.Utils;
+using TcmbUI.Models;
 
 namespace TcmbUI.Controllers
 {
@@ -13,15 +15,19 @@ namespace TcmbUI.Controllers
         {
             return View();
         }
-        public IActionResult Exchanges()
+        [HttpPost]
+        public IActionResult Exchanges(string iDate, string iCurrency)
         {
             var response = Helper.PostJson("{\"currency\":\"usd\",\"year\":\"2023\",\"month\":\"10\",\"day\":\"02\"}", "https://localhost:44306/api/Converter/Exchange").Result;
-            
-
-
-
-            return View();
+            ViewBag.Exchanges=response;
+            var data = JsonConvert.DeserializeObject<ExchangesViewModel>(response);
+            return View(data);
         }
+        //[HttpGet]
+        ////public IActionResult Exchanges()
+        ////{
+        ////    return View();
+        ////}
 
     }
 }

@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TcmbUI</title>
+    <link rel="stylesheet" href="~/lib/jquery-ui/dist/jquery-ui.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap-ui/dist/css/bootstrap-ui.css" />
+    <link rel="stylesheet" href="~//fonts.googleapis.com/css?family=Titillium+Web:400,300,700&amp;subset=turkish, turkish-ext" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -43,9 +46,18 @@
             &copy; 2023 - TcmbUI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> *@
+    <script src="https://docs.bootstrap-ui.com/assets/js/jquery.min.js?v3.1.1"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/js/moment-with-locales.min.js?v3.1.1"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/js/bootstrap.min.js?v3.1.1"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/js/bootstrap-datetimepicker.min.js?v3.1.1"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/js/select2.js?v3.1.1"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/js/bootstrap-ui.js?v3.1.1"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/vendor/ckeditor/ckeditor.js"></script>
+    <script src="https://docs.bootstrap-ui.com/assets/vendor/ckeditor/adapters/jquery.js"></script>
+    <script src="https://docs.bootstrap-ui.com/kss-assets/js/prettify.js?v3.1.1"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
